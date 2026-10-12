@@ -3551,6 +3551,35 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "shooting",
+            "id": "c1cf8d60-5845-4679-8dbc-c7b1f9a6958f",
+            "actions": [
+                {
+                    "name": "shoot trigger",
+                    "type": "Button",
+                    "id": "b2360091-9791-4754-8705-f765849aae84",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "309db77b-e0f5-4e86-8304-c8049fb8680f",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "shoot trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
