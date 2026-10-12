@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boxmovement : MonoBehaviour
 {
@@ -18,7 +19,11 @@ public class Boxmovement : MonoBehaviour
            if(other.CompareTag("Player"))
             {
             Debug.Log("Player has entered the trigger zone");
+            {
+                SceneManager.LoadScene("test scene");
+            }
         }
+        
     }
     private void OnTriggerExit(Collider other)
     {
