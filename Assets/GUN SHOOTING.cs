@@ -1,12 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro; 
 
 public class GUNSHOOTING : MonoBehaviour
+
 {
     public Transform FirePoint;
     public GameObject bulletPrefab;
-    public float bulletspeed = 20f;
-    public AudioSource firesound; 
+    public float bulletspeed = 50f;
+    public AudioSource firesound;
+
+   
 
     public InputActionReference fireBtn;
     // Start is called once beore the first execution of Update after the MonoBehaviour is created
@@ -40,7 +45,7 @@ public class GUNSHOOTING : MonoBehaviour
 
         GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, bulletPrefab.transform.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.linearVelocity = FirePoint.forward * bulletspeed;
+        rb.linearVelocity = FirePoint.forward * bulletspeed * 2;
 
         firesound.Play();
 
