@@ -27,25 +27,17 @@ public class GUNSHOOTING : MonoBehaviour
         fireBtn.action.performed-= Fire;
         fireBtn.action.Disable();
     }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void Fire(InputAction.CallbackContext context)
     {
         RaycastHit hit;
         Physics.Raycast(FirePoint.position, FirePoint.forward, 100f);
 
-        GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, bulletPrefab.transform.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, Quaternion.Euler(0f,0f,0f), this.gameObject.transform);
+        Debug.Log("After shoot "+bullet.transform.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.linearVelocity = FirePoint.forward * bulletspeed * 2;
+        Debug.Log("After rigidbody " + bullet.transform.rotation);
 
         firesound.Play();
 
