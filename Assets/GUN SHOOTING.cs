@@ -33,7 +33,7 @@ public class GUNSHOOTING : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(FirePoint.position, FirePoint.forward, 100f);
 
-        GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, Quaternion.Euler(0f,0f,0f), this.gameObject.transform);
+        GameObject bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation, this.gameObject.transform);
         Debug.Log("After shoot "+bullet.transform.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.linearVelocity = FirePoint.forward * bulletspeed * 2;
